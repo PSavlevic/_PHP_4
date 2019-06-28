@@ -1,0 +1,50 @@
+body {
+    background-image: linear-gradient( 68.1deg,  rgba(61,114,180,1) 5.8%, rgba(82,82,82,1) 98.1% );
+    background-repeat: no-repeat;
+    height: 160vh;
+}
+
+input {
+    width: 80%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+button {
+    background-color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+button:hover {
+    border: 1px solid white;
+    color: white;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(254,158,94,1) 0%, rgba(254,94,114,1) 94.3% );
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+}
+
+.forma {
+    text-align: center;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(254,158,94,1) 0%, rgba(254,94,114,1) 94.3% );
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+span {
+    display: block;
+    color: darkblue;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
