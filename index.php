@@ -75,7 +75,7 @@ function validate_form($field_input, &$form)
             }
         }
     }
-    sutapimas($field_input['passwordas1'], $field_input['passwordas2'], $field);
+    sutapimas($field_input['passwordas1'], $field_input['passwordas2'], $form['fields']['passwordas2']);
     return $success;
 }
 
