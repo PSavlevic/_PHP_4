@@ -75,6 +75,8 @@ function validate_form($field_input, &$form)
             }
         }
     }
+    sutapimas($field_input['passwordas1'], $field_input['passwordas2'], $field);
+    return $success;
 }
 
 //validate_not_empty($safe_input['vardas'], $form['fields']['vardas']);
@@ -100,31 +102,28 @@ function validate_length($field_input, &$field)
     }
 }
 
-//if (isset($safe_input)){
-//sutapimas($safe_input['passwordas1'], $safe_input['passwordas2'], $form);
-//}
-
-//function sutapimas($pass1, $pass2, &$field) {
-//    if($pass1 != $pass2){
-//        $field['error'] = 'Slaptazodziai nesutampa!!';
-//    } else {
-//        return true;
-//    }
-//}
-
-//Duomenu irasymas i info.csv faila!!!!
-if (isset($_POST['mygtukas'])) {
-//    SUKURIAMAS KINTAMASIS APJUNGIANTIS VISUS POST LAUKELIUS
-    $stringData = $safe_input['vardas'] . '  ' . $safe_input['email'] . ' ' . $safe_input['passwordas1'] . ' ' . $safe_input['passwordas2'] . "\n";
-//    NURODOMA .csvFAILO VIETA IR KAS BUS JAME DAROMA
-    $csvFile = "info.csv";
-    $fh = fopen($csvFile, 'a') or die("can't open file");
-//    IRASOMI DUOMENYS I NURODYTA .csv FAILA
-    fwrite($fh, $stringData);
-//    UZDAROMAS FAILAS
-    fclose($fh);
-    header("Location:index.php");
+function sutapimas($pass1, $pass2, &$field)
+{
+    if ($pass1 != $pass2) {
+        $field['error'] = 'Slaptazodziai nesutampa!!';
+    } else {
+        return true;
+    }
 }
+
+////Duomenu irasymas i info.csv faila!!!!
+//if (isset($_POST['mygtukas'])) {
+////    SUKURIAMAS KINTAMASIS APJUNGIANTIS VISUS POST LAUKELIUS
+//    $stringData = $safe_input['vardas'] . '  ' . $safe_input['email'] . ' ' . $safe_input['passwordas1'] . ' ' . $safe_input['passwordas2'] . "\n";
+////    NURODOMA .csvFAILO VIETA IR KAS BUS JAME DAROMA
+//    $csvFile = "info.csv";
+//    $fh = fopen($csvFile, 'a') or die("can't open file");
+////    IRASOMI DUOMENYS I NURODYTA .csv FAILA
+//    fwrite($fh, $stringData);
+////    UZDAROMAS FAILAS
+//    fclose($fh);
+//    header("Location:index.php");
+//}
 
 var_dump($_POST);
 var_dump(get_form_input($form));
@@ -154,7 +153,6 @@ var_dump(get_form_input($form));
         <?php endforeach; ?>
         <button name="mygtukas">Pateikti</button>
     </form>
-<!--    antras-->
 </div>
 </body>
 </html>
